@@ -1,0 +1,19 @@
+// Import the exportLandslideHazardMap function
+var landslideModule  = require('users/geokshitij/indrawati:landslide_hazard.js');
+
+// Define the inputs for the first call to the function
+var slide1 = ee.FeatureCollection("projects/indrawati/assets/slide_preEQ");
+var nslide1 = ee.FeatureCollection("projects/indrawati/assets/nslide_preEQ");
+var boundary1 = ee.FeatureCollection("projects/indrawati/assets/Boundary");
+
+// Call the function with the first set of inputs
+var PreEQ= landslideModule.exportLandslideHazardMap(slide1, nslide1, boundary1,"pre");
+
+// Define the inputs for the second call to the function
+var slide2 = ee.FeatureCollection("projects/indrawati/assets/slide_EQ");
+var nslide2 = ee.FeatureCollection("projects/indrawati/assets/nslide_EQ");
+var boundary2 = ee.FeatureCollection("projects/indrawati/assets/Boundary");
+
+// Call the function with the second set of inputs
+var PostEQ = landslideModule.exportLandslideHazardMap(slide2, nslide2, boundary2,"post");
+
